@@ -16,3 +16,13 @@
 0:0:0:0:0:0:0:1 - - [06/Dec/2023:12:34:14 -0600] "GET /TiendaVideojuegos/FormularioInsertarVideojuego.jsp HTTP/1.1" 200 2176
 0:0:0:0:0:0:0:1 - - [06/Dec/2023:12:34:14 -0600] "GET /TiendaVideojuegos/js/validaciones_vid.js HTTP/1.1" 200 906
 0:0:0:0:0:0:0:1 - - [06/Dec/2023:12:34:46 -0600] "POST /TiendaVideojuegos/InsertarVideojuego.jsp?clave=23&titulo=Nuevo%204&precio=200&cveprov=1&inventario=12 HTTP/1.1" 200 28
+0:0:0:0:0:0:0:1 - - [06/Dec/2023:14:08:20 -0600] "GET /resources/img/iconos/arrow-right-circle_red@2x.png HTTP/1.1" 404 749
+127.0.0.1 - - [06/Dec/2023:14:25:17 -0600] "GET / HTTP/1.1" 404 687
+0:0:0:0:0:0:0:1 - - [06/Dec/2023:14:25:18 -0600] "GET /TiendaVideojuegos/ HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [06/Dec/2023:14:25:33 -0600] "GET /TiendaVideojuegos/MostrarVideojuegos.jsp HTTP/1.1" 200 1598
+0:0:0:0:0:0:0:1 - - [06/Dec/2023:14:27:29 -0600] "GET /TiendaVideojuegos/FormularioInsertarVideojuego.jsp HTTP/1.1" 200 2176
+0:0:0:0:0:0:0:1 - - [06/Dec/2023:14:27:29 -0600] "GET /TiendaVideojuegos/css/style.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [06/Dec/2023:14:27:29 -0600] "GET /TiendaVideojuegos/js/validaciones_vid.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [06/Dec/2023:14:27:34 -0600] "GET /TiendaVideojuegos/FormularioInsertarVideojuego.jsp HTTP/1.1" 200 2176
+0:0:0:0:0:0:0:1 - - [06/Dec/2023:14:27:49 -0600] "POST /TiendaVideojuegos/InsertarVideojuego.jsp?clave=24&titulo=prueba&precio=200&cveprov=2&inventario=2 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [06/Dec/2023:14:27:49 -0600] "GET /TiendaVideojuegos/MostrarVideojuegos.jsp HTTP/1.1" 200 1665

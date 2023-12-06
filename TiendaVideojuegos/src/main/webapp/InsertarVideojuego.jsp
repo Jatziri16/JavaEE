@@ -17,14 +17,13 @@
 		
 		int filas = 0;
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost/gamers", "root", ""); //DB, User, PSW
 			stm = con.createStatement();
 			
 			String query = "INSERT INTO videojuegos (cve_vid,tit_vid,pre_vid,cveprov_vid,inv_vid) VALUES ";
 			query += "("+cve+",'"+titulo+"',"+precio+","+cveprov+","+inventario+")";
 			filas = stm.executeUpdate(query);
-			//response.sendRedirect("FormularioInsertarVideojuego");
 		} 
 		catch (ClassNotFoundException e)
 		{
@@ -39,4 +38,5 @@
 			if(stm != null) stm.close();
 			if(con != null) con.close();
 		}	
+		response.sendRedirect("MostrarVideojuegos.jsp");
  %>
