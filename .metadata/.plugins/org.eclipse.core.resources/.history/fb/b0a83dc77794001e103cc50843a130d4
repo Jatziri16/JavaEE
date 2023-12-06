@@ -1,0 +1,10 @@
+package mx.com.cursodia.javaEE2022;
+
+public class DataBaseHelper {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

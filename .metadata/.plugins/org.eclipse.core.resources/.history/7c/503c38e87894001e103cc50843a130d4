@@ -1,0 +1,15 @@
+package mx.com.cursodia.javaEE2022;
+
+public class DataBaseHelper {
+
+	private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
+	private static final String URL = "jdbc:mysql://localhost/gamers";
+	private static final String USUARIO = "root";
+	private static final String CLAVE = "";
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

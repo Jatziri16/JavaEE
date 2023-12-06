@@ -8,22 +8,15 @@
 	</head>
 	<body>
 		<!-- Imports -->
-		<%@ page import="java.sql.Connection"%>
-		<%@ page import="java.sql.Statement"%>
-		<%@ page import="java.sql.DriverManager"%>
-		<%@ page import="java.sql.SQLException"%>
+		<%@ page import="mx.com.cursodia.javaEE2022.DataBaseHelper"%>
 		<%@ page import="java.sql.ResultSet"%>
+		<%@ page import="java.sql.SQLException"%>
 		<% 
-			Connection con = null;
-			Statement stm = null;
 			ResultSet rs = null;
+			DataBaseHelper dbh = new DataBaseHelper();
 			try {
-				Class.forName("com.mysql.cj.jdbc.Driver");
-				con = DriverManager.getConnection("jdbc:mysql://localhost/gamers", "root", ""); //DB, User, PSW
-				stm = con.createStatement();
-				
 				String query = "SELECT * FROM videojuegos";
-				rs = stm.executeQuery(query);
+				rs = dbh.seleccionarVideojuegos(query);
 				
 				while(rs.next())
 				{%>
@@ -34,20 +27,16 @@
 					<%= rs.getInt("inv_vid") %>
 					<br>
 				<%}
-			} 
-			catch (ClassNotFoundException e)
-			{
-				System.out.println("Error al cargar la libreria" +e.getMessage());
 			}
-			catch(SQLException e)
+			catch (SQLException e)
 			{
-				System.out.println("Error accediendo a la DB "+e.getMessage());
+				System.out.println("Error al acceder a la Base de Datos" +e.getMessage());
 			}
 			finally
 			{
-				if(stm != null) stm.close();
-				if(con != null) con.close();
 				if(rs != null) rs.close();
+				if(dbh.getCon() != null) dbh.getCon().close();
+				if(dbh.getStm() != null) dbh.getStm().close();
 			}	
 		%>
 		<a href="FormularioInsertarVideojuego.jsp">Inserta videojuego</a>
