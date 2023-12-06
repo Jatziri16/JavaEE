@@ -1,0 +1,21 @@
+function validarForms()
+{
+	console.log("ENTRO A validarForms()")
+	let clave = document.getElementById("clave").value;
+	let titulo = document.getElementById("titulo").value;
+	let precio = document.getElementById("precio").value;
+
+	if(clave == "" || titulo == "" || precio == "") { 
+		setWarnsMsj();
+	}
+	else
+	{
+		alert("\ntitulo = "+titulo+"\nprecio = "+precio+"\nclave = "+clave)
+		alert("Videojuego insertado");
+	}
+}
+
+function setWarnsMsj()
+{
+    alert("Todos los campos son obligatorios")
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;TiendaVideojuegos/src/main/webapp/js/validaciones.js&apos; to &apos;validaciones_vid.js&apos;" description="Rename resource &apos;validaciones.js&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/js/validaciones.js" name="validaciones_vid.js" stamp="1701831341703" updateReferences="true"/>
+</session>
