@@ -47,3 +47,17 @@
 0:0:0:0:0:0:0:1 - - [06/Dec/2023:15:28:26 -0600] "GET /TiendaVideojuegos/js/validaciones_vid.js HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [06/Dec/2023:15:28:40 -0600] "POST /TiendaVideojuegos/InsertarVideojuego.jsp?clave=25&titulo=prueba%202&precio=100&cveprov=1&inventario=1 HTTP/1.1" 302 -
 0:0:0:0:0:0:0:1 - - [06/Dec/2023:15:28:40 -0600] "GET /TiendaVideojuegos/MostrarVideojuegos.jsp HTTP/1.1" 200 1726
+127.0.0.1 - - [06/Dec/2023:15:54:13 -0600] "GET / HTTP/1.1" 404 687
+0:0:0:0:0:0:0:1 - - [06/Dec/2023:15:54:13 -0600] "GET /TiendaVideojuegos/ HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [06/Dec/2023:15:54:20 -0600] "GET /TiendaVideojuegos/MostrarVideojuegos.jsp HTTP/1.1" 200 1726
+0:0:0:0:0:0:0:1 - - [06/Dec/2023:15:54:26 -0600] "GET /TiendaVideojuegos/FormularioInsertarVideojuego.jsp HTTP/1.1" 200 2176
+0:0:0:0:0:0:0:1 - - [06/Dec/2023:15:54:26 -0600] "GET /TiendaVideojuegos/js/validaciones_vid.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [06/Dec/2023:15:54:49 -0600] "POST /TiendaVideojuegos/InsertarVideojuego.jsp?clave=26&titulo=prueba&precio=100&cveprov=1&inventario=10 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [06/Dec/2023:15:54:49 -0600] "GET /TiendaVideojuegos/MostrarVideojuegos.jsp HTTP/1.1" 200 1794
+127.0.0.1 - - [06/Dec/2023:16:05:03 -0600] "GET / HTTP/1.1" 404 687
+0:0:0:0:0:0:0:1 - - [06/Dec/2023:16:05:04 -0600] "GET /TiendaVideojuegos/ HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [06/Dec/2023:16:05:09 -0600] "GET /TiendaVideojuegos/MostrarVideojuegos.jsp HTTP/1.1" 200 1794
+0:0:0:0:0:0:0:1 - - [06/Dec/2023:16:05:11 -0600] "GET /TiendaVideojuegos/FormularioInsertarVideojuego.jsp HTTP/1.1" 200 2176
+0:0:0:0:0:0:0:1 - - [06/Dec/2023:16:05:16 -0600] "GET /TiendaVideojuegos/FormularioInsertarVideojuego.jsp HTTP/1.1" 200 2176
+0:0:0:0:0:0:0:1 - - [06/Dec/2023:16:05:27 -0600] "POST /TiendaVideojuegos/InsertarVideojuego.jsp?clave=27&titulo=PRUEBA%201&precio=1&cveprov=1&inventario=1 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [06/Dec/2023:16:05:27 -0600] "GET /TiendaVideojuegos/MostrarVideojuegos.jsp HTTP/1.1" 200 1861

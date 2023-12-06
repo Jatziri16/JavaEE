@@ -8,15 +8,13 @@
 	</head>
 	<body>
 		<!-- Imports -->
-		<%@ page import="mx.com.cursodia.javaEE2022.DataBaseHelper"%>
+		<%@ page import="mx.com.cursodia.javaEE2022.Beans.Videojuego"%>
 		<%@ page import="java.sql.ResultSet"%>
 		<%@ page import="java.sql.SQLException"%>
 		<% 
 			ResultSet rs = null;
-			DataBaseHelper dbh = new DataBaseHelper();
 			try {
-				String query = "SELECT * FROM videojuegos";
-				rs = dbh.seleccionarVideojuegos(query);
+				rs = Videojuego.getVideojuegos();
 				
 				while(rs.next())
 				{%>
@@ -35,8 +33,6 @@
 			finally
 			{
 				if(rs != null) rs.close();
-				if(dbh.getCon() != null) dbh.getCon().close();
-				if(dbh.getStm() != null) dbh.getStm().close();
 			}	
 		%>
 		<a href="FormularioInsertarVideojuego.jsp">Inserta videojuego</a>
