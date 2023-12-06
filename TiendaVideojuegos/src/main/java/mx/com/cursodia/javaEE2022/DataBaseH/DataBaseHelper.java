@@ -49,7 +49,7 @@ public class DataBaseHelper {
 		return filas;
 	}
 	
-	public ResultSet seleccionarVideojuegos(String query)
+	public ResultSet seleccionarRegistros(String query)
 	{
 		Connection con = null;
 		Statement stm = null;

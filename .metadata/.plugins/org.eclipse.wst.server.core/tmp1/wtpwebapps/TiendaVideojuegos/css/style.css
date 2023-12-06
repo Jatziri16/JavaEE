@@ -30,7 +30,7 @@ display: flex;
     background-size: cover;
     background-color: rgba(20, 20, 20, 0.908);
 	border-radius: 5px;
-    padding: 30px 50px;
+    padding: 100px 50px;
     color: white;
 }
 .warning-container

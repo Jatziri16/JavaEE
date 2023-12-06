@@ -58,14 +58,6 @@ public class Videojuego {
 	{
 		return cve_vid;
 	}
-
-	public static ResultSet getProveedores() throws SQLException
-	{
-		String query = "SELECT DISTINCT cveprov_vid FROM videojuegos";
-		DataBaseHelper dbh = new DataBaseHelper();
-		cerrarConexion();
-		return dbh.seleccionarVideojuegos(query);
-	}
 	
 	public static void setVideojuego(int cve, String titulo, float precio, int cveprov, int inventario) throws SQLException
 	{
@@ -80,7 +72,7 @@ public class Videojuego {
 		String query = "SELECT * FROM videojuegos";
 		DataBaseHelper dbh = new DataBaseHelper();
 		cerrarConexion();
-		return dbh.seleccionarVideojuegos(query);
+		return dbh.seleccionarRegistros(query);
 	}
 	
 	private static void cerrarConexion() throws SQLException
