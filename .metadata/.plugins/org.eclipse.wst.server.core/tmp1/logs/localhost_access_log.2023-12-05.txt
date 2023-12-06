@@ -1,2 +1,9 @@
 127.0.0.1 - - [05/Dec/2023:19:58:10 -0600] "GET / HTTP/1.1" 404 687
 0:0:0:0:0:0:0:1 - - [05/Dec/2023:19:58:10 -0600] "GET /TiendaVideojuegos/ HTTP/1.1" 404 709
+127.0.0.1 - - [05/Dec/2023:19:59:16 -0600] "GET / HTTP/1.1" 404 687
+0:0:0:0:0:0:0:1 - - [05/Dec/2023:19:59:16 -0600] "GET /TiendaVideojuegos/ HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [05/Dec/2023:19:59:20 -0600] "GET /TiendaVideojuegos/FormularioVideojuego HTTP/1.1" 404 729
+0:0:0:0:0:0:0:1 - - [05/Dec/2023:19:59:23 -0600] "GET /TiendaVideojuegos/FormularioVideojuego.html HTTP/1.1" 200 143
+0:0:0:0:0:0:0:1 - - [05/Dec/2023:20:06:53 -0600] "GET /TiendaVideojuegos/ HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [05/Dec/2023:20:07:06 -0600] "GET /TiendaVideojuegos/FormularioVideojuego.html HTTP/1.1" 200 400
+0:0:0:0:0:0:0:1 - - [05/Dec/2023:20:08:25 -0600] "GET /TiendaVideojuegos/FormularioVideojuego.html HTTP/1.1" 200 416
