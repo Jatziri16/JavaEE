@@ -4,13 +4,19 @@ function validarForms()
 	let clave = document.getElementById("clave").value;
 	let titulo = document.getElementById("titulo").value;
 	let precio = document.getElementById("precio").value;
+	let cveprov = document.getElementById("cveprov").value;
+	let inv = document.getElementById("inventario").value;
 
-	if(clave == "" || titulo == "" || precio == "") { 
+	if(clave == "" || titulo == "" || precio == "" || cveprov == "" || inv == "") { 
 		setWarnsMsj();
 	}
 	else
 	{
-		alert("\ntitulo = "+titulo+"\nprecio = "+precio+"\nclave = "+clave)
+		alert("clave = "+clave+"\ntitulo = "+titulo+"\nprecio = "+precio+"\ncveprov = "+cveprov+"\ninv = "+inv)
+		document.forms[0].action = "InsertarVideojuego.jsp?clave="+clave+"&titulo="+titulo+"&precio="+precio+"&cveprov="+cveprov+"&inventario="+inv;
+		document.forms[0].method = "post";
+		document.forms[0].submit();
+		alert("Videojuego insertado");
 	}
 }
 

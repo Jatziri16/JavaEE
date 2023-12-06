@@ -1,0 +1,3 @@
+INDEX VERSION 1.131
+C:\Users\fatim\OneDrive\Documentos\Eclipse-workspaces\Cursodia\JavaEE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3757603226.index
+\TiendaVideojuegos\src\main\java

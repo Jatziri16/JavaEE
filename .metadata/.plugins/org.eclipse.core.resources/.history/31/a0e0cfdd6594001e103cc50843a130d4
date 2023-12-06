@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html = lang "es">
 	<head>
 		<meta charset="UTF-8">
 		<title>Formulario Alta Videojuego</title>
@@ -25,7 +26,13 @@
 								<input class="form-control mb-2" type="text" placeholder="Título" name="titulo" id="titulo">
 								
 								<label for="precio">Precio:</label>
-								<input class="form-control mb-4" type="text" placeholder="Precio" name="precio" id="precio">
+								<input class="form-control mb-2" type="text" placeholder="Precio" name="precio" id="precio">
+								
+								<label for="cveprov">Clave del proveedor:</label>
+								<input class="form-control mb-2" type="text" placeholder="Clave del proveedor" name="cveprov" id="cveprov">
+								
+								<label for="inventario">Inventario:</label>
+								<input class="form-control mb-4" type="text" placeholder="Inventario" name="inventario" id="inventario">
 								
 								<button class="btn btn-primary w-100" onclick="validarForms()" type="button">Insertar</button>
 							</form>
