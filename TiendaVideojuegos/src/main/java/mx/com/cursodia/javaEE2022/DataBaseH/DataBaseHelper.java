@@ -5,6 +5,11 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import mx.com.cursodia.javaEE2022.Beans.Proveedor;
+import mx.com.cursodia.javaEE2022.Beans.Videojuego;
 
 public class DataBaseHelper {
 
@@ -49,17 +54,22 @@ public class DataBaseHelper {
 		return filas;
 	}
 	
-	public ResultSet seleccionarRegistros(String query)
+	public List<Videojuego> executeQueryVid(String query) throws SQLException
 	{
 		Connection con = null;
 		Statement stm = null;
 		ResultSet rs = null;
-		
+		List<Videojuego> lista = new ArrayList<Videojuego>();
 		try {
 			Class.forName(DRIVER);
 			con = DriverManager.getConnection(URL, USUARIO, CLAVE); //DB, User, PSW
 			stm = con.createStatement();
 			rs = stm.executeQuery(query);
+			while(rs.next())
+			{
+				lista.add(new Videojuego(rs.getInt("cve_vid"),rs.getString("tit_vid"),
+						rs.getFloat("pre_vid"),rs.getInt("cveprov_vid"),rs.getInt("inv_vid")));
+			}
 		}
 		catch (ClassNotFoundException e)
 		{
@@ -71,11 +81,45 @@ public class DataBaseHelper {
 		}
 		finally
 		{
-			//if(stm != null) stm.close();
-			//if(con != null) con.close();
+			if(stm != null) stm.close();
+			if(con != null) con.close();
 			/* Si cerramos aqui el ResultSet, no podrán acceder a los datos cuando lo enviemos*/
-			//if(rs != null) rs.close(); 
+			if(rs != null) rs.close(); 
 		}
-		return rs;
+		return lista;
+	}
+	public List<Proveedor> executeQueryProv(String query) throws SQLException
+	{
+		Connection con = null;
+		Statement stm = null;
+		ResultSet rs = null;
+		List<Proveedor> lista = new ArrayList<Proveedor>();
+		try {
+			Class.forName(DRIVER);
+			con = DriverManager.getConnection(URL, USUARIO, CLAVE); //DB, User, PSW
+			stm = con.createStatement();
+			rs = stm.executeQuery(query);
+			while(rs.next())
+			{
+				lista.add(new Proveedor(rs.getInt("cve_prov"),rs.getString("nom_prov"),
+						rs.getString("email_prov"),rs.getString("tel_prov")));
+			}
+		}
+		catch (ClassNotFoundException e)
+		{
+			System.out.println("Error al cargar el driver" +e.getMessage());
+		}
+		catch(SQLException e)
+		{
+			System.out.println("Error accediendo a la DB "+e.getMessage());
+		}
+		finally
+		{
+			if(stm != null) stm.close();
+			if(con != null) con.close();
+			/* Si cerramos aqui el ResultSet, no podrán acceder a los datos cuando lo enviemos*/
+			if(rs != null) rs.close(); 
+		}
+		return lista;
 	}
 }

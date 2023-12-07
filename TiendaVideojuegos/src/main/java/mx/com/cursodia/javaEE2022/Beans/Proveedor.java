@@ -2,6 +2,7 @@ package mx.com.cursodia.javaEE2022.Beans;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import mx.com.cursodia.javaEE2022.DataBaseH.DataBaseHelper;
 
@@ -50,17 +51,17 @@ public class Proveedor {
 		return cve_prov;
 	}
 	
-	public static ResultSet getProveedores() throws SQLException
+	public static Proveedor getProveedor(int cve) throws SQLException
+	{
+		String query = "SELECT * FROM proveedores WHERE cve_prov="+cve;
+		DataBaseHelper dbh = new DataBaseHelper();
+		List<Proveedor> lista =  dbh.executeQueryProv(query);
+		return lista.get(0);
+	}
+	public static List<Proveedor> getProveedores() throws SQLException
 	{		
 		String query = "SELECT * FROM proveedores";
 		DataBaseHelper dbh = new DataBaseHelper();
-		cerrarConexion();
-		return dbh.seleccionarRegistros(query);
-	}
-	private static void cerrarConexion() throws SQLException
-	{
-		DataBaseHelper dbh = new DataBaseHelper();
-		if(dbh.getCon() != null) dbh.getCon().close();
-		if(dbh.getStm() != null) dbh.getStm().close();
+		return dbh.executeQueryProv(query);
 	}
 }

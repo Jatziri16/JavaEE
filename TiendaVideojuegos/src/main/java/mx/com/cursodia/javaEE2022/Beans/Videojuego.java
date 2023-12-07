@@ -2,6 +2,7 @@ package mx.com.cursodia.javaEE2022.Beans;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import mx.com.cursodia.javaEE2022.DataBaseH.DataBaseHelper;
 
@@ -59,26 +60,45 @@ public class Videojuego {
 		return cve_vid;
 	}
 	
+	public static Videojuego getVideojuego(int cve) throws SQLException
+	{
+		String query = "SELECT * FROM videojuegos WHERE cve_vid="+cve;
+		DataBaseHelper dbh = new DataBaseHelper();
+		List<Videojuego> lista = dbh.executeQueryVid(query);
+		return lista.get(0);
+	}
+	public static List<Videojuego> getVideojuegos() throws SQLException
+	{
+		String query = "SELECT * FROM videojuegos";
+		DataBaseHelper dbh = new DataBaseHelper();
+		return dbh.executeQueryVid(query);
+	}
 	public static void setVideojuego(int cve, String titulo, float precio, int cveprov, int inventario) throws SQLException
 	{
 		String query = "INSERT INTO videojuegos (cve_vid,tit_vid,pre_vid,cveprov_vid,inv_vid) VALUES ";
 		query += "("+cve+",'"+titulo+"',"+precio+","+cveprov+","+inventario+")";
 		DataBaseHelper dbh = new DataBaseHelper();
 		dbh.modificarVideojuego(query);
-		cerrarConexion();
 	}
-	public static ResultSet getVideojuegos() throws SQLException
+	public static int updateVideojuego(int cve, String titulo, float precio, int cveprov, int inventario) throws SQLException
 	{
-		String query = "SELECT * FROM videojuegos";
+		/*String query = "UPDATE videojuegos "
+			+ "SET tit_vid='"+titulo+"', pre_vid="+precio+", cveprov_vid="+cveprov+", inv_vid="+inventario+" "
+			+ "WHERE cve_vid = "+cve;
+		DatabaseHelper dbh = new DatabaseHelper();
+		int n = dbh.insertarVideojuego(query);
+		return n;*/
+		
+		String query = "UPDATE videojuegos "
+			+ "SET tit_vid='"+titulo+"', pre_vid="+precio+", cveprov_vid="+cveprov+", inv_vid="+inventario+" "
+			+ "WHERE cve_vid="+cve;
 		DataBaseHelper dbh = new DataBaseHelper();
-		cerrarConexion();
-		return dbh.seleccionarRegistros(query);
+		return dbh.modificarVideojuego(query);
 	}
 	
-	private static void cerrarConexion() throws SQLException
-	{
-		DataBaseHelper dbh = new DataBaseHelper();
-		if(dbh.getCon() != null) dbh.getCon().close();
-		if(dbh.getStm() != null) dbh.getStm().close();
+	@Override
+	public String toString() {
+		return "Videojuego [cve_vid=" + cve_vid + ", tit_vid=" + tit_vid + ", pre_vid=" + pre_vid + ", cveprov_vid="
+				+ cveprov_vid + ", inv_vid=" + inv_vid + "]";
 	}
 }

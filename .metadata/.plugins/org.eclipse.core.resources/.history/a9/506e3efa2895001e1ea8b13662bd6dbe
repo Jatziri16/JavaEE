@@ -1,0 +1,87 @@
+body
+{
+	background-color: gray;
+}
+h1
+{
+	text-align: center;
+}
+.contenedor {
+    padding: 30px 0;
+}
+
+.centrar
+{
+display: flex;
+  justify-content: center;
+    /* margin: 0 auto; */
+}
+.centrar-2
+{
+	margin: 0 auto;
+}
+.invalido {
+	margin-top: 5px;
+    font-size: 80%;
+}
+
+.login-container {
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../../../assets/imgs/login-bg.png); */
+    background-size: cover;
+    background-color: rgba(20, 20, 20, 0.908);
+	border-radius: 5px;
+    padding: 30px 40px;
+    color: white;
+}
+.warning-container
+{
+	background-size: cover;
+    background-color: red;
+	border-radius: 5px;
+    padding: 30px 50px;
+    color: white;
+}
+.button {
+  background-color: transparent; /* Green */
+  border: none;
+  padding: 5px 0;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.btn-insertar {
+  color: white; 
+  border: 2px solid #4CAF50;
+}
+.btn-actualizar {
+  color: white; 
+  border: 2px solid #db752d;
+}
+.btn-cancelar {
+  color: white; 
+  border: 2px solid #474747;
+}
+
+.btn-insertar:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+.btn-actualizar:hover {
+  background-color: #db752d;
+  color: white;
+}
+.btn-cancelar:hover {
+  background-color: #474747;
+  color: white; 
+}
+
+/*input {
+	border: 1px solid red;
+}*/

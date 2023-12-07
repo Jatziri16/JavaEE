@@ -158,3 +158,8 @@
 0:0:0:0:0:0:0:1 - - [06/Dec/2023:16:46:20 -0600] "POST /TiendaVideojuegos/InsertarVideojuego.jsp?clave=28&titulo=PRUEBA%202&precio=200&cveprov=2&inventario=2 HTTP/1.1" 302 -
 0:0:0:0:0:0:0:1 - - [06/Dec/2023:16:46:20 -0600] "GET /TiendaVideojuegos/MostrarVideojuegos.jsp HTTP/1.1" 200 5853
 0:0:0:0:0:0:0:1 - - [06/Dec/2023:16:47:01 -0600] "GET /TiendaVideojuegos/MostrarVideojuegos.jsp HTTP/1.1" 200 5772
+127.0.0.1 - - [06/Dec/2023:23:26:32 -0600] "GET / HTTP/1.1" 404 687
+0:0:0:0:0:0:0:1 - - [06/Dec/2023:23:26:33 -0600] "GET /TiendaVideojuegos/ HTTP/1.1" 500 2659
+0:0:0:0:0:0:0:1 - - [06/Dec/2023:23:27:42 -0600] "GET /TiendaVideojuegos/ HTTP/1.1" 200 7284
+0:0:0:0:0:0:0:1 - - [06/Dec/2023:23:27:42 -0600] "GET /TiendaVideojuegos/css/mostrarVideojuegos.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [06/Dec/2023:23:28:16 -0600] "GET /TiendaVideojuegos/ HTTP/1.1" 200 7500

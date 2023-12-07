@@ -12,8 +12,7 @@
 		<!-- Imports -->
 		<%@ page import="mx.com.cursodia.javaEE2022.Beans.Videojuego"%>
 		<%@ page import="mx.com.cursodia.javaEE2022.Beans.Proveedor"%>
-		<%@ page import="java.sql.ResultSet"%>
-		<%@ page import="java.sql.SQLException"%>
+		<%@ page import="java.util.List"%>
 		
 		<div class="container">
 	        <br>
@@ -31,23 +30,11 @@
 					<option value="" disabled>Selecciona un proveedor</option>
 					<option value="Todos" selected>Todos</option>
 					<%
-						ResultSet rsProv = null;
-						try {
-							rsProv = Proveedor.getProveedores();
-							
-							while(rsProv.next())
-							{%>
-							<option value="<%= rsProv.getInt("cve_prov") %>"><%= rsProv.getInt("cve_prov") %> - <%= rsProv.getString("nom_prov") %></option>
-							<%}
-						}
-						catch (SQLException e)
-						{
-							System.out.println("Error al acceder a la Base de Datos " +e.getMessage());
-						}
-						finally
-						{
-							if(rsProv != null) rsProv.close();
-						}	
+						List<Proveedor> listaProveedores = Proveedor.getProveedores();
+						for(Proveedor p:listaProveedores)
+						{%>
+						<option value="<%= p.getCve_prov() %>"><%= p.getCve_prov() %> - <%= p.getNom_prov() %></option>
+						<%}
 					%>
 				</select>
 			</form>
@@ -63,32 +50,19 @@
 	            	</tr>
 	          	</thead>
 	          	<tbody>	
-	          		
 	          		<% 
-						ResultSet rsVid = null;
-						try {
-							rsVid = Videojuego.getVideojuegos();
-							
-							while(rsVid.next())
-							{%>
-								<tr>
-									<th><%= rsVid.getInt("cve_vid") %></th>
-									<td><%= rsVid.getString("tit_vid") %></td>
-									<td><%= rsVid.getFloat("pre_vid") %></td>
-									<td><%= rsVid.getInt("cveprov_vid") %></td>
-									<td><%= rsVid.getInt("inv_vid") %></td>
-								</tr>
-							<%}
-						}
-						catch (SQLException e)
-						{
-							System.out.println("Error al acceder a la Base de Datos" +e.getMessage());
-						}
-						finally
-						{
-							if(rsVid != null) rsVid.close();
-						}	
-					%>
+          			List<Videojuego> listaVideojuegos = Videojuego.getVideojuegos();
+					for(Videojuego v:listaVideojuegos)
+					{%>
+						<tr>
+							<th><%= v.getCve_vid() %></th>
+							<td><%= v.getTit_vid() %></td>
+							<td><%= v.getPre_vid() %></td>
+							<td><%= v.getCveprov_vid() %></td>
+							<td><%= v.getInv_vid() %></td>
+							<td><input type="button" class="edit" value="Editar" onclick="location.href= 'FormularioInsertarVideojuego.jsp?CVE=<%=v.getCve_vid()%>'"/></td>
+						</tr>
+					<%}%>
 	          	</tbody>
 	        </table>
 		</div>
